@@ -127,7 +127,8 @@ export { Avatar, AvatarButton } from './components/Avatar';
 export { Switch, SwitchField, SwitchGroup } from './components/Switch';
 
 // ── Dialog ───────────────────────────────────────────────────
-export { Dialog, DialogBackdrop, DialogPanel, DialogTitle, Transition } from '@headlessui/react';
+export { Dialog, ConfirmationDialog } from './components/Dialog';
+export { DialogBackdrop, DialogPanel, DialogTitle, Transition } from '@headlessui/react';
 
 // ── Menu (raw Headless UI) ───────────────────────────────────
 export { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';

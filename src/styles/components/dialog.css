@@ -1,0 +1,170 @@
+/* ============================================================
+   DIALOG / MODAL COMPONENT
+   Matches the lead-management-frontend dialog visual design:
+   frosted-glass panel, indigo gradient header, blurred backdrop.
+   ============================================================ */
+
+/* -- Backdrop ---------------------------------------------- */
+.ds-dialog__backdrop {
+  position:        fixed;
+  inset:           0;
+  z-index:         var(--z-modal);
+  background:      rgba(0, 0, 0, 0.60);
+  backdrop-filter: blur(4px);
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  padding:         var(--space-4);
+}
+
+/* -- Panel ------------------------------------------------- */
+.ds-dialog__panel {
+  position:        relative;
+  background:      rgba(255, 255, 255, 0.90);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-radius:   1rem;               /* rounded-2xl */
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.60);   /* border border-white/60 */
+  border:          1px solid rgba(255, 255, 255, 0.60);
+  overflow:        hidden;
+  width:           100%;
+  max-height:      90vh;
+  overflow-y:      auto;
+}
+
+/* -- Panel sizes ------------------------------------------- */
+.ds-dialog__panel--sm  { max-width: 24rem; }
+.ds-dialog__panel--md  { max-width: 28rem; }
+.ds-dialog__panel--lg  { max-width: 32rem; }
+.ds-dialog__panel--xl  { max-width: 36rem; }
+.ds-dialog__panel--2xl { max-width: 42rem; }
+.ds-dialog__panel--3xl { max-width: 48rem; }
+.ds-dialog__panel--4xl { max-width: 56rem; }
+.ds-dialog__panel--7xl { max-width: 80rem; }
+
+/* -- Header (gradient, matches lead app LinkAccountDialog) -- */
+.ds-dialog__header {
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+  padding:         1.25rem 1.5rem 1rem;   /* px-6 pt-5 pb-4 */
+  background:      linear-gradient(135deg, #f8faff 0%, #eef2ff 100%);
+  border-bottom:   1px solid rgba(99, 102, 241, 0.15); /* border-indigo-100/60 */
+}
+
+.ds-dialog__title {
+  font-size:   0.9375rem;               /* ~text-sm/base */
+  font-weight: 700;                     /* font-bold */
+  color:       #1e293b;                 /* slate-800 */
+  line-height: 1.25;
+  margin:      0;
+}
+
+/* -- Close button ------------------------------------------ */
+.ds-dialog__close {
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  padding:         0.375rem;           /* p-1.5 */
+  border:          none;
+  background:      transparent;
+  border-radius:   0.5rem;             /* rounded-lg */
+  color:           #94a3b8;            /* slate-400 */
+  cursor:          pointer;
+  flex-shrink:     0;
+  transition:
+    color            0.15s ease,
+    background-color 0.15s ease;
+}
+
+.ds-dialog__close:hover {
+  color:      #334155;                 /* slate-700 */
+  background: #f1f5f9;                 /* slate-100 */
+}
+
+.ds-dialog__close:focus-visible {
+  outline:        2px solid #6366f1;   /* indigo-500 */
+  outline-offset: 2px;
+}
+
+/* -- Body -------------------------------------------------- */
+.ds-dialog__body {
+  padding: 1.25rem 1.5rem;            /* px-6 py-5 */
+}
+
+/* -- Footer ------------------------------------------------ */
+.ds-dialog__footer {
+  display:         flex;
+  align-items:     center;
+  justify-content: flex-end;
+  gap:             0.5rem;
+  padding:         1rem 1.5rem 1.25rem;
+  border-top:      1px solid rgba(99, 102, 241, 0.12);
+}
+
+/* ============================================================
+   CONFIRMATION DIALOG
+   ============================================================ */
+
+.ds-confirm__icon {
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  width:           3.5rem;
+  height:          3.5rem;
+  border-radius:   50%;
+  margin:          0 auto 1rem;
+}
+
+.ds-confirm__icon--warning { background: #fef3c7; }  /* amber-100  */
+.ds-confirm__icon--danger  { background: #fee2e2; }  /* red-100    */
+.ds-confirm__icon--info    { background: #dbeafe; }  /* blue-100   */
+
+.ds-confirm__icon svg { width: 2rem; height: 2rem; }
+
+.ds-confirm__icon--warning svg { color: #d97706; }   /* amber-600  */
+.ds-confirm__icon--danger  svg { color: #dc2626; }   /* red-600    */
+.ds-confirm__icon--info    svg { color: #2563eb; }   /* blue-600   */
+
+.ds-confirm__content {
+  text-align:    center;
+  margin-bottom: 1.5rem;
+}
+
+.ds-confirm__title {
+  font-size:   1.125rem;
+  font-weight: 600;
+  color:       #1e293b;
+  margin:      0 0 0.75rem;
+}
+
+.ds-confirm__message {
+  font-size:   0.875rem;
+  color:       #64748b;
+  line-height: 1.625;
+  margin:      0;
+}
+
+.ds-confirm__warning-text {
+  font-size:   0.75rem;
+  font-weight: 500;
+  margin-top:  1rem;
+}
+
+.ds-confirm__warning-text--warning { color: #d97706; }
+.ds-confirm__warning-text--danger  { color: #dc2626; }
+
+.ds-confirm__actions {
+  display:        flex;
+  flex-direction: column-reverse;
+  gap:            0.75rem;
+}
+
+@media (min-width: 640px) {
+  .ds-confirm__actions {
+    flex-direction:  row;
+    justify-content: flex-end;
+  }
+}

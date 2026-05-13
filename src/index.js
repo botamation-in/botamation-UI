@@ -143,3 +143,9 @@ export {
 
 // ── AccountCombobox (dark header account switcher) ───────────
 export { AccountCombobox } from './components/AccountCombobox';
+
+// ── Toggle ───────────────────────────────────────────────────
+export { Toggle } from './components/Toggle';
+
+// ── Badge ────────────────────────────────────────────────────
+export { Badge } from './components/Badge';

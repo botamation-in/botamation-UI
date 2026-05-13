@@ -19,6 +19,7 @@
     "**/*.css"
   ],
   "scripts": {
+    "start": "vite build --watch",
     "dev": "vite build --watch",
     "build": "vite build",
     "preview": "vite preview"

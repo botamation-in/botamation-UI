@@ -1,0 +1,100 @@
+/* ============================================================
+   Toggle — slide-switch checkbox
+   ============================================================ */
+
+.ds-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  cursor: pointer;
+  user-select: none;
+}
+
+.ds-toggle--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Hidden native checkbox (accessible) */
+.ds-toggle__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Track */
+.ds-toggle__track {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 2.5rem;    /* 40px */
+  height: 1.375rem; /* 22px */
+  border-radius: var(--radius-full);
+  background-color: var(--color-gray-300);
+  transition: background-color var(--transition-normal);
+  flex-shrink: 0;
+}
+
+.ds-toggle__input:checked + .ds-toggle__track {
+  background: var(--gradient-primary);
+}
+
+.ds-toggle__input:focus-visible + .ds-toggle__track {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+/* Thumb */
+.ds-toggle__thumb {
+  position: absolute;
+  left: 2px;
+  width: 1.125rem;  /* 18px */
+  height: 1.125rem;
+  border-radius: var(--radius-full);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-xs);
+  transition: transform var(--transition-normal);
+}
+
+.ds-toggle__input:checked + .ds-toggle__track .ds-toggle__thumb {
+  transform: translateX(1.125rem);
+}
+
+/* Sizes */
+.ds-toggle--sm .ds-toggle__track {
+  width: 1.875rem;   /* 30px */
+  height: 1.0625rem; /* 17px */
+}
+.ds-toggle--sm .ds-toggle__thumb {
+  width: 0.8125rem;  /* 13px */
+  height: 0.8125rem;
+}
+.ds-toggle--sm .ds-toggle__input:checked + .ds-toggle__track .ds-toggle__thumb {
+  transform: translateX(0.8125rem);
+}
+
+.ds-toggle--lg .ds-toggle__track {
+  width: 3.25rem;   /* 52px */
+  height: 1.75rem;  /* 28px */
+}
+.ds-toggle--lg .ds-toggle__thumb {
+  width: 1.375rem;  /* 22px */
+  height: 1.375rem;
+}
+.ds-toggle--lg .ds-toggle__input:checked + .ds-toggle__track .ds-toggle__thumb {
+  transform: translateX(1.5rem);
+}
+
+/* Label */
+.ds-toggle__label {
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  line-height: var(--leading-normal);
+}

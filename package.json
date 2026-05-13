@@ -18,6 +18,9 @@
   "sideEffects": [
     "**/*.css"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "start": "vite build --watch",
     "dev": "vite build --watch",

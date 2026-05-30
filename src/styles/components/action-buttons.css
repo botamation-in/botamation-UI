@@ -1,0 +1,75 @@
+/* ============================================================
+   ACTION BUTTONS — EditButton & DeleteButton
+   Small icon-only action buttons for grid/table rows.
+   ============================================================ */
+
+.action-btn {
+  position:        relative;
+  display:         inline-flex;
+  align-items:     center;
+  justify-content: center;
+  width:           1.5rem;   /* 24px */
+  height:          1.5rem;
+  padding:         0;
+  background:      transparent;
+  border:          1px solid var(--color-gray-300, #d1d5db);
+  border-radius:   var(--radius-md, 6px);
+  cursor:          pointer;
+  transition:
+    background-color 180ms var(--ease-out, ease),
+    border-color     180ms var(--ease-out, ease),
+    color            180ms var(--ease-out, ease),
+    transform        180ms var(--ease-out, ease);
+  outline: none;
+}
+
+.action-btn:focus-visible {
+  outline:        2px solid var(--color-border-focus, #6366f1);
+  outline-offset: 2px;
+}
+
+.action-btn:disabled {
+  opacity:        0.5;
+  cursor:         not-allowed;
+  pointer-events: none;
+}
+
+/* Icon inside */
+.action-btn__icon {
+  width:  0.875rem;  /* 14px */
+  height: 0.875rem;
+  color:  var(--color-gray-400, #9ca3af);
+  transition: color 180ms var(--ease-out, ease);
+  fill:   none;
+  stroke: currentColor;
+}
+
+/* ── Edit variant ─────────────────────────────────────────── */
+.action-btn--edit:hover:not(:disabled) {
+  background:   #eff6ff;   /* blue-50 */
+  border-color: #93c5fd;   /* blue-300 */
+  transform:    scale(1.1);
+}
+
+.action-btn--edit:hover:not(:disabled) .action-btn__icon {
+  color: #2563eb;   /* blue-600 */
+}
+
+.action-btn--edit:focus-visible {
+  outline-color: #93c5fd;  /* blue-300 */
+}
+
+/* ── Delete variant ───────────────────────────────────────── */
+.action-btn--delete:hover:not(:disabled) {
+  background:   #fef2f2;   /* red-50 */
+  border-color: #fca5a5;   /* red-300 */
+  transform:    scale(1.1);
+}
+
+.action-btn--delete:hover:not(:disabled) .action-btn__icon {
+  color: #ef4444;   /* red-500 */
+}
+
+.action-btn--delete:focus-visible {
+  outline-color: #fca5a5;  /* red-300 */
+}

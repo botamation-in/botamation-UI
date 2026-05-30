@@ -149,3 +149,24 @@ export { Toggle } from './components/Toggle';
 
 // ── Badge ────────────────────────────────────────────────────
 export { Badge } from './components/Badge';
+
+// ── Action Buttons (EditButton / DeleteButton) ───────────────
+export { EditButton, DeleteButton } from './components/ActionButtons';
+
+// ── Checkbox ─────────────────────────────────────────────────
+export { Checkbox, CheckboxGroup } from './components/Checkbox';
+
+// ── Tabs ─────────────────────────────────────────────────────
+export { Tabs, Tab } from './components/Tabs';
+
+// ── DataTable ────────────────────────────────────────────────
+export { DataTable } from './components/DataTable';
+
+// ── AppointmentCalendar ──────────────────────────────────────
+export { default as AppointmentCalendar } from './components/calendar/AppointmentCalendar';
+export { default as MonthView } from './components/calendar/MonthView';
+export { default as WeekView } from './components/calendar/WeekView';
+export { default as YearView } from './components/calendar/YearView';
+export { default as BetweenDatesView } from './components/calendar/BetweenDatesView';
+export { default as DateView } from './components/calendar/DateView';
+export { formatDateToString, isToday, commonStyles, renderCalendarHeader, renderAppointmentBadge } from './components/calendar/calendarUtils.jsx';

@@ -1,0 +1,58 @@
+/* ============================================================
+   TABS COMPONENT
+   Underline-style tab bar with active indicator
+   ============================================================ */
+
+.tabs {
+  display:     flex;
+  gap:         0;
+  border-bottom: 2px solid var(--color-gray-200, #e5e7eb);
+  margin-bottom: var(--space-4, 1rem);
+}
+
+/* Individual tab */
+.tab {
+  position:    relative;
+  display:     inline-flex;
+  align-items: center;
+  gap:         var(--space-2, 0.5rem);
+  padding:     var(--space-2, 0.5rem) var(--space-4, 1rem);
+  font-family: var(--font-sans, inherit);
+  font-size:   var(--text-sm, 0.875rem);
+  font-weight: var(--font-medium, 500);
+  color:       var(--color-text-muted, #6b7280);
+  background:  transparent;
+  border:      none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;   /* overlap parent border */
+  cursor:      pointer;
+  white-space: nowrap;
+  transition:
+    color        180ms ease,
+    border-color 180ms ease;
+  outline: none;
+  text-decoration: none;
+}
+
+.tab:hover:not(.tab--active):not(:disabled) {
+  color: var(--color-text, #111827);
+}
+
+.tab:focus-visible {
+  outline:        2px solid var(--color-border-focus, #6366f1);
+  outline-offset: 2px;
+  border-radius:  var(--radius-sm, 4px);
+}
+
+.tab:disabled {
+  opacity:        0.45;
+  cursor:         not-allowed;
+  pointer-events: none;
+}
+
+/* Active state */
+.tab--active {
+  color:        var(--color-primary-600, #7c3aed);
+  border-bottom-color: var(--color-primary-600, #7c3aed);
+  font-weight:  var(--font-semibold, 600);
+}

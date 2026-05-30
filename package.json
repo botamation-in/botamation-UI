@@ -7,6 +7,7 @@
   "module": "./dist/botamation-ui.js",
   "exports": {
     ".": {
+      "module": "./dist/botamation-ui.js",
       "import": "./dist/botamation-ui.js",
       "require": "./dist/botamation-ui.umd.cjs"
     },

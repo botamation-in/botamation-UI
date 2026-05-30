@@ -12,7 +12,7 @@ export default defineConfig({
     },
     rollupOptions: {
       // Peer deps — don't bundle them
-      external: ['react', 'react-dom', 'react/jsx-runtime', '@headlessui/react', 'framer-motion', 'clsx'],
+      external: ['react', 'react-dom', 'react/jsx-runtime', '@headlessui/react', 'framer-motion', 'clsx', '@heroicons/react', /^@heroicons\//],
       output: {
         globals: {
           react: 'React',
@@ -21,6 +21,7 @@ export default defineConfig({
           '@headlessui/react': 'HeadlessUI',
           'framer-motion': 'FramerMotion',
           'clsx': 'clsx',
+          '@heroicons/react': 'HeroIcons',
         },
       },
     },
